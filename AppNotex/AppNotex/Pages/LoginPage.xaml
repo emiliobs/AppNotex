@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppNotex.Pages.LoginPage" Title="Login Page.">
+  <ScrollView>
+    <StackLayout>
+      <Label Text="Notes App" FontSize="40" FontAttributes="Bold" VerticalOptions="Center"></Label>
+      <Label FontSize="20"  Text="Ingrese su E-Mail, Contraseña y Presiones el botón Ingresar, o Registre un Nuevo Usuario."
+             HorizontalOptions="Center" VerticalOptions="Center"></Label>
+      <Entry FontSize="20"  x:Name="emailEntry" Placeholder="Ingrese su E-Mail." Keyboard="Email" HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center"></Entry>
+      <Entry FontSize="20"  x:Name="passwordEntry" Placeholder="Ingrese su Contraseña" IsPassword="True" HorizontalOptions="FillAndExpand"
+             VerticalOptions="Center"></Entry>
+      <StackLayout Orientation="Horizontal">
+        <Label FontSize="20"  Text="Recordarme" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+        <Switch  x:Name="remembermeSwich"  HorizontalOptions="EndAndExpand" VerticalOptions="Center"></Switch>
+      </StackLayout>
+      <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></ActivityIndicator>
+      <Button FontSize="20"  x:Name="enterButton" BackgroundColor="Yellow" TextColor="Black" Text="Ingresar" HorizontalOptions="FillAndExpand"
+              VerticalOptions="Center"></Button>
+      <Label></Label>
+      <Button FontSize="20"  x:Name="registerButton" BackgroundColor="Purple"  TextColor="White" Text="Registrar Nuevo Usuario" HorizontalOptions="FillAndExpand"
+              VerticalOptions="Center"></Button>
+    </StackLayout>
+  </ScrollView>
+
+</ContentPage>
