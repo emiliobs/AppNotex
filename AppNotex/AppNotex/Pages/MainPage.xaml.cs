@@ -38,6 +38,26 @@ namespace AppNotex.Pages
             //tamañño en que la quiero que aparezca:
             photImage.HeightRequest = 280;
             photImage.WidthRequest = 280;
+
+            //Pregsunto si profesor o  estudiante:
+            if (this.user.IsStudent)
+            {
+                myNotesButton.IsVisible = true;
+            }
+            else
+            {
+                myNotesButton.IsVisible = false;
+            }
+
+            if (this.user.IsTeacher)
+            {
+                enterNotesButton.IsVisible = true;
+            }
+            else
+            {
+                enterNotesButton.IsVisible = false;
+            }
+
         }
     }
 }
