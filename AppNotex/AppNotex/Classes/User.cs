@@ -1,7 +1,10 @@
-﻿namespace AppNotex.Classes
+﻿using SQLite.Net.Attributes;
+
+namespace AppNotex.Classes
 {
     public class User
     {
+        [PrimaryKey]
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string FirstName { get; set; }

@@ -24,6 +24,23 @@ namespace AppNotex.Pages
                     new Thickness(10),
                     new Thickness(10)
                 );
+
+            logOutButton.Clicked += LogOutButton_Clicked;
+        }
+
+        private async void LogOutButton_Clicked(object sender, EventArgs e)
+        {
+            using (var db = new DataAccess())
+            {
+                var user = db.First<User>();
+
+                if (user != null)
+                {
+                    db.Delete(user);
+                }
+
+                await Navigation.PushAsync(new LoginPage());
+            }
         }
 
         //esto significa que cad que pase poraqui me carga el objeto user actualizado:
