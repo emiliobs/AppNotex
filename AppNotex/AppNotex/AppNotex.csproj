@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\LoginRequest.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Interfaces\IConfig.cs" />

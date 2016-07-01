@@ -1,4 +1,5 @@
-﻿using AppNotex.Pages;
+﻿using AppNotex.Classes;
+using AppNotex.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,22 @@ namespace AppNotex
     {
         public App()
         {
+            using (var db = new DataAccess())
+            {
+                var user = db.First<User>();
+
+                if (user == null)
+                {
+                    this.MainPage = new NavigationPage(new LoginPage());
+                }
+                else
+                {
+                    this.MainPage = new NavigationPage(new MainPage(user));
+                }
+            }
+
             // The root page of your application
-            MainPage = new NavigationPage(new LoginPage());
+            //MainPage = new NavigationPage(new LoginPage());
             //MainPage = new ContentPage
             //{
             //    Content = new StackLayout

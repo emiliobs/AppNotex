@@ -27,5 +27,10 @@
                 return $"http://www.zulu-software.com/notes{this.Photo.Substring(1)}";
             }
          }
+
+        public override int GetHashCode()
+        {
+            return this.UserId;
+        }
     }
 }

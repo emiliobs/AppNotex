@@ -100,12 +100,28 @@ namespace AppNotex.Pages
 
             var user = JsonConvert.DeserializeObject<User>(response);
             user.Password = passwordEntry.Text;
-           
+
             //await DisplayAlert("Bienvenido ", $" {user.FullName} " ," Aceptar");
+            waitActivityIndicator.IsRunning = false;
+            //datos en persintencia:
+            this.VerifyRememberme(user);
+
             //
             await Navigation.PushAsync(new MainPage(user));
-            waitActivityIndicator.IsRunning = false;
+           
 
+        }
+
+        private  void VerifyRememberme(User user)
+        {
+            if (remembermeSwich.IsToggled)//si es verdadera:
+            {
+                using (var db = new DataAccess())
+                {
+                    //lo grabo en la bd la persistencia:
+                    db.Insert<User>(user);
+                }
+            }
         }
     }
 }
