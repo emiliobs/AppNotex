@@ -20,6 +20,12 @@ namespace AppNotex.Pages
                     new Thickness(10)
                 );
             enterButton.Clicked += EnterButton_Clicked;
+            registerButton.Clicked += RegisterButton_Clicked;
+        }
+
+        private async void RegisterButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RegisterPage());
         }
 
         protected override void OnAppearing()

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppNotex.Pages.RegisterPage" Title="Registro Estudiantes.">
+
+
+  <ScrollView>
+    <StackLayout Spacing="10">
+      <StackLayout Orientation="Horizontal">
+        <Label Text="E-Mail *." HorizontalOptions="Start" VerticalOptions="Center"></Label>
+        <Entry x:Name="userNameEntry" Placeholder="E-Email." Keyboard="Email" HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"></Entry>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Nombres" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+        <Entry x:Name="firstNameEntry" Placeholder="Nombres."  HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"></Entry>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Apellidos" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+        <Entry x:Name="lastNameEntry" Placeholder="Apellidos." HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"></Entry>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Teléfono" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+        <Entry x:Name="phoneEntry" Placeholder="Teléfono."  HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"></Entry>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Dirección" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+        <Entry x:Name="addresEntry" Placeholder="Direccion." Keyboard="Text" HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"></Entry>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Contraseña" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+        <Entry x:Name="passwordEntry" Placeholder="Contraseña." IsPassword="True" HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"></Entry>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Label Text="Confirmación" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+        <Entry x:Name="confirmEntry" Placeholder="Confirmación Contraseña." IsPassword="True" HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center"></Entry>
+      </StackLayout>
+      <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"></ActivityIndicator>
+      <Button x:Name="saveButton" Text="Guardar." BackgroundColor="Yellow" TextColor="Black" HorizontalOptions="FillAndExpand"
+              VerticalOptions="Center"></Button>
+    </StackLayout>
+  </ScrollView>
+
+
+
+</ContentPage>

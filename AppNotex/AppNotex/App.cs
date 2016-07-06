@@ -27,6 +27,8 @@ namespace AppNotex
                 }
             }
 
+            //MainPage = new NavigationPage(new RegisterPage());
+
             // The root page of your application
             //MainPage = new NavigationPage(new LoginPage());
             //MainPage = new ContentPage

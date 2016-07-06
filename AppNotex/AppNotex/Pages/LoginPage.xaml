@@ -19,7 +19,7 @@
       <Button FontSize="20"  x:Name="enterButton" BackgroundColor="Yellow" TextColor="Black" Text="Ingresar" HorizontalOptions="FillAndExpand"
               VerticalOptions="Center"></Button>
       <Label></Label>
-      <Button FontSize="20"  x:Name="registerButton" BackgroundColor="Purple"  TextColor="White" Text="Registrar Nuevo Usuario" HorizontalOptions="FillAndExpand"
+      <Button FontSize="20"  x:Name="registerButton" BackgroundColor="Purple"  TextColor="White" Text="Registrar Nuevo Estudiante." HorizontalOptions="FillAndExpand"
               VerticalOptions="Center"></Button>
     </StackLayout>
   </ScrollView>

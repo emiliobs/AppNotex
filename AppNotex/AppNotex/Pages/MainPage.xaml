@@ -2,17 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppNotex.Pages.MainPage" Title="Notas..">
-  
-<ScrollView>
-  <StackLayout Spacing="10">
-    <Image x:Name="photImage" HorizontalOptions="Center" VerticalOptions="Center"></Image>
-  <Label Text="Bienvenid@" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
-  <Label x:Name="userNameLabel" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
-  <Button x:Name="mySettingButton" Text="Mis Parametros." BackgroundColor="Yellow" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
-  <Button x:Name="myNotesButton" Text="Mis Notas." BackgroundColor="Navy" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
-  <Button x:Name="enterNotesButton" Text="Ingrese Notas." BackgroundColor="Green" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
-  <Button x:Name="logOutButton" Text="salir." BackgroundColor="Purple" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
-</StackLayout>
-</ScrollView>
+
+  <ScrollView>
+    <StackLayout Spacing="10">
+      <Image x:Name="photImage" HorizontalOptions="Center" VerticalOptions="Center"></Image>
+      <Label Text="Bienvenid@" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+      <Label x:Name="userNameLabel" FontSize="30" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+      <Button x:Name="mySettingButton" Text="Mis Parametros." BackgroundColor="Yellow" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
+      <Button x:Name="myNotesButton" Text="Mis Notas." BackgroundColor="Navy" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
+      <Button x:Name="enterNotesButton" Text="Ingrese Notas." BackgroundColor="Green" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
+      <Button x:Name="logOutButton" Text="salir." BackgroundColor="Purple" TextColor="White" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
+    </StackLayout>
+  </ScrollView>
 
 </ContentPage>
