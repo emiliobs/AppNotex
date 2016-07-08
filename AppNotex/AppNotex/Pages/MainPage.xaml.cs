@@ -26,6 +26,12 @@ namespace AppNotex.Pages
                 );
 
             logOutButton.Clicked += LogOutButton_Clicked;
+            mySettingButton.Clicked += MySettingButton_Clicked;
+        }
+
+        private async void MySettingButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MySettingsPage(user));
         }
 
         private async void LogOutButton_Clicked(object sender, EventArgs e)
