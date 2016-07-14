@@ -29,6 +29,12 @@ namespace AppNotex.Pages
                 );
 
             saveButton.Clicked += SaveButton_Clicked;
+            changePasswordButton.Clicked += ChangePasswordButton_Clicked;
+        }
+
+        private async void ChangePasswordButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ChangePassword(user));
         }
 
         private async void SaveButton_Clicked(object sender, EventArgs e)
@@ -82,19 +88,42 @@ namespace AppNotex.Pages
             var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
             var response = string.Empty;
 
-            // to do??
+          
             try
             {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri("http://www.zulu-software.com");
+                var url = $"/Notes/API/Users/{this.user.UserId}";
+                var result = await client.PutAsync(url, httpContent);
 
+                if (!result.IsSuccessStatusCode)
+                {
+                    waitActivityIndicator.IsRunning = false;
+                    saveButton.IsEnabled = true;
+                    await DisplayAlert("Error", result.Content.ToString(), "Aceptar");
+                    return;
+                }
+
+                //datos en persistencia:
+                using (var db = new DataAccess())
+                {
+                    db.Update(user);
+                    
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                waitActivityIndicator.IsRunning = false;
+                saveButton.IsEnabled = true;
+                await DisplayAlert("Error", ex.Message, "Aceptar");
+                return;
             }
 
             waitActivityIndicator.IsRunning = true;
             saveButton.IsEnabled = false;
+            await DisplayAlert("Confirmación", "Datos Modificados Correctamente","Aceptar");
+            await Navigation.PopAsync();
         }
 
         protected override void OnAppearing()

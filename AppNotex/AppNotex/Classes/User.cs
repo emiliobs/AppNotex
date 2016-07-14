@@ -9,7 +9,14 @@ namespace AppNotex.Classes
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return $"{ this.FirstName } { this.LastName }";
+            }
+                
+        }
         public string Phone { get; set; }
         public string Address { get; set; }
         public string Photo { get; set; }
