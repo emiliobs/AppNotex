@@ -27,7 +27,21 @@ namespace AppNotex.Pages
 
             logOutButton.Clicked += LogOutButton_Clicked;
             mySettingButton.Clicked += MySettingButton_Clicked;
+            myNotesButton.Clicked += MyNotesButton_Clicked;
+            enterNotesButton.Clicked += EnterNotesButton_Clicked;
         }
+
+        private async void MyNotesButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MySubjectsPage(user));
+        }
+
+        private async void EnterNotesButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MyGroupsPage(user));
+        }
+
+       
 
         private async void MySettingButton_Clicked(object sender, EventArgs e)
         {

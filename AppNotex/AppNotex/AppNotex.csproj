@@ -37,7 +37,9 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Classes\DataAccess.cs" />
+    <Compile Include="Classes\Group.cs" />
     <Compile Include="Classes\LoginRequest.cs" />
+    <Compile Include="Classes\MyGroupsResponse.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Pages\ChangePassword.xaml.cs">
@@ -49,8 +51,14 @@
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MyGroupsPage.xaml.cs">
+      <DependentUpon>MyGroupsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MySettingsPage.xaml.cs">
       <DependentUpon>MySettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MySubjectsPage.xaml.cs">
+      <DependentUpon>MySubjectsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
@@ -123,6 +131,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\ChangePassword.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\MyGroupsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\MySubjectsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
