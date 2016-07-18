@@ -9,7 +9,7 @@ namespace AppNotex.Classes
     public class MyGroupsResponse
     {
         public List<Group> MyGroups { get; set; }
-        public List<Group> MySubjects { get; set; }
+        public List<Teacher> MySubjects { get; set; }
 
     }
 }

@@ -36,10 +36,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Cells\MySubjectCell.cs" />
     <Compile Include="Classes\DataAccess.cs" />
     <Compile Include="Classes\Group.cs" />
     <Compile Include="Classes\LoginRequest.cs" />
     <Compile Include="Classes\MyGroupsResponse.cs" />
+    <Compile Include="Classes\Teacher.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Pages\ChangePassword.xaml.cs">

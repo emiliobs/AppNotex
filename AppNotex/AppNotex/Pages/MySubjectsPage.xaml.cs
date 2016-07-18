@@ -1,4 +1,5 @@
-﻿using AppNotex.Classes;
+﻿using AppNotex.Cells;
+using AppNotex.Classes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,9 @@ namespace AppNotex.Pages
                     new Thickness(10),
                     new Thickness(10)
                 );
+
+            mySubjectListView.ItemTemplate = new DataTemplate(typeof(MySubjectCell));
+            mySubjectListView.RowHeight = 160;
         }
 
         protected override void OnAppearing()
