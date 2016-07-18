@@ -29,6 +29,12 @@ namespace AppNotex.Pages
                 );
 
             myGroupsListView.ItemTemplate = new DataTemplate(typeof(MyGroupCell));
+            myGroupsListView.ItemSelected += MyGroupsListView_ItemSelected;
+        }
+
+        private async void MyGroupsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            await Navigation.PushAsync(new NewNotePage((Group)e.SelectedItem));
         }
 
         protected override void OnAppearing()
