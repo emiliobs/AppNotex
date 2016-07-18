@@ -1,4 +1,5 @@
-﻿using AppNotex.Classes;
+﻿using AppNotex.Cells;
+using AppNotex.Classes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace AppNotex.Pages
                     new Thickness(10)
                 );
 
+            myGroupsListView.ItemTemplate = new DataTemplate(typeof(MyGroupCell));
         }
 
         protected override void OnAppearing()

@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppNotex.Pages.MyGroupsPage" Title="Mis Grupos.">
-  
- <ScrollView>
-   <StackLayout Spacing="10">
-     <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center"  VerticalOptions="Center"></ActivityIndicator>    
-     <ListView x:Name="myGroupsListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></ListView>
-   
-   </StackLayout>
- </ScrollView>
+
+  <ScrollView>
+    <StackLayout Spacing="10">
+      <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center"  VerticalOptions="Center"></ActivityIndicator>
+      <ListView x:Name="myGroupsListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></ListView>
+
+    </StackLayout>
+  </ScrollView>
 </ContentPage>
