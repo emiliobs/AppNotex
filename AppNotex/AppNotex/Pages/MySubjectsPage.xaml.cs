@@ -70,9 +70,17 @@ namespace AppNotex.Pages
             }
 
             var myGroupsResponse = JsonConvert.DeserializeObject<MyGroupsResponse>(response);
-
+            CalculateNotes(myGroupsResponse.MySubjects);
             mySubjectListView.ItemsSource = myGroupsResponse.MySubjects;
             waitActivityIndicator.IsRunning = false;
+        }
+
+        private void CalculateNotes(List<Teacher> mySubjects)
+        {
+            foreach (var item in collection)
+            {
+
+            }
         }
     }
 }
