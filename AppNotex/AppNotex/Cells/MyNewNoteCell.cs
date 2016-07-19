@@ -38,6 +38,8 @@ namespace AppNotex.Cells
             {
                 Keyboard = Keyboard.Numeric,
                 HorizontalOptions = LayoutOptions.EndAndExpand,
+                WidthRequest = 70,
+                HorizontalTextAlignment = TextAlignment.End,
                 VerticalOptions = LayoutOptions.Center,
             };
             noteEntry.SetBinding(Entry.TextProperty, "Note");

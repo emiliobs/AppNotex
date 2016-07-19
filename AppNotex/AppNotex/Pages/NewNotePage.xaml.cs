@@ -15,6 +15,8 @@ namespace AppNotex.Pages
     public partial class NewNotePage : ContentPage
     {
         private Group group;
+        private List<MyStudentResponse> myStudentsResponse;
+        float percentage;
         public NewNotePage(Group group)
         {
             InitializeComponent();
@@ -30,6 +32,61 @@ namespace AppNotex.Pages
 
             myStudentsListView.ItemTemplate = new DataTemplate(typeof(MyNewNoteCell));
             myStudentsListView.RowHeight = 110;
+
+            saveButton.Clicked += SaveButton_Clicked;
+      
+
+                }
+
+        private async void SaveButton_Clicked(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty( percentajeName.Text))
+            {
+                await DisplayAlert("Error","Debe ingresar un porcentaje de Notas.","Aceptar");
+                percentajeName.Focus();
+                return;
+            }
+
+             percentage = float.Parse(percentajeName.Text) / 100;
+
+            if (percentage < 0 || percentage > 1)
+            {
+                await DisplayAlert("Error","Debe ingresar un porcentaje entre 1 y 100%","Aceptar");
+                percentajeName.Focus();
+                return;
+            }
+
+            foreach (var myStudentResponse in myStudentsResponse)
+            {
+                if (myStudentResponse.Note < 0 || myStudentResponse.Note > 5)
+                {
+                    await DisplayAlert("Error",$"El Estudiante { myStudentResponse.Student.FullName} no tiene un a Nota Valida ",
+                                       "Aceptar");
+                    return;
+                }
+            }
+
+            SaveNote();
+        }
+
+        private  void SaveNote()
+        {
+            waitActivityIndicator.IsRunning = true;
+
+            var body = new
+            {
+                Percentage = percentage,
+                Students = myStudentsResponse,
+            };
+
+            var jsonRequest = JsonConvert.SerializeObject(body);
+            var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
+
+            var respkinse = string.Empty;
+
+
+
+            waitActivityIndicator.IsRunning = false;
         }
 
         protected override void OnAppearing()
@@ -71,7 +128,7 @@ namespace AppNotex.Pages
                 return;
             }
 
-            var myStudentsResponse = JsonConvert.DeserializeObject<List<MyStudentResponse>>(response);
+            myStudentsResponse = JsonConvert.DeserializeObject<List<MyStudentResponse>>(response);
             myStudentsListView.ItemsSource = myStudentsResponse;
 
             waitActivityIndicator.IsRunning = false;
