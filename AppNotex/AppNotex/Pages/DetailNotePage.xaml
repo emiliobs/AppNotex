@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppNotex.Pages.DetailNotePage" Title="Detalles de Notas.">
+
+  <ScrollView>
+    <StackLayout Spacing="10">
+      <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center"  VerticalOptions="Center"></ActivityIndicator>
+      <StackLayout Orientation="Horizontal">
+        <Label x:Name="asignatureLabel" FontSize="20" FontAttributes="20" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+      </StackLayout>
+      <ListView x:Name="myStudentsListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></ListView>
+    </StackLayout>
+  </ScrollView>
+  
+</ContentPage>
