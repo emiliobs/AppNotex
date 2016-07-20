@@ -2,18 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppNotex.Pages.NewNotePage" Title="Ingreso de Notas.">
-  
+
   <ScrollView>
     <StackLayout Spacing="10">
-       <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center" VerticalOptions="Center"></ActivityIndicator>
+      <ActivityIndicator x:Name="waitActivityIndicator" HorizontalOptions="Center" VerticalOptions="Center"></ActivityIndicator>
       <StackLayout Orientation="Horizontal">
-       
+
         <Label Text="Porcentaje" HorizontalOptions="Start" VerticalOptions="Center"></Label>
-      <Entry x:Name="percentajeName" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
+        <Entry x:Name="percentajeName" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Entry>
       </StackLayout>
-    <ListView x:Name="myStudentsListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></ListView>
-    <Button x:Name="saveButton" Text="Guardar Notas." BackgroundColor="Yellow" TextColor="Black" 
-              HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
+      <ListView x:Name="myStudentsListView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></ListView>
+      <Button x:Name="saveButton" Text="Guardar Notas." BackgroundColor="Yellow" TextColor="Black"
+                HorizontalOptions="FillAndExpand" VerticalOptions="Center"></Button>
     </StackLayout>
   </ScrollView>
   

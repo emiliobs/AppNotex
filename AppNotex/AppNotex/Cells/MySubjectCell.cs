@@ -38,6 +38,10 @@ namespace AppNotex.Cells
             var noteLabel = new Label
             {
                  HorizontalOptions = LayoutOptions.FillAndExpand,
+                 FontSize = 20,
+                 FontAttributes = FontAttributes.Bold,
+                 BackgroundColor = Color.White,
+                 TextColor = Color.Red,
             };
 
             noteLabel.SetBinding(Label.TextProperty, "Note", stringFormat: "Difinitiva: {0:N2}");

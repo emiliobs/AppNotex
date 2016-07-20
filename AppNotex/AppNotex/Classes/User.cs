@@ -13,7 +13,14 @@ namespace AppNotex.Classes
         {
             get
             {
-                return $"{ this.FirstName } { this.LastName }";
+               var fullName = $"{ this.FirstName } { this.LastName }";
+
+                if (fullName.Length > 25)
+                {
+                    fullName = fullName.Substring(0,25);
+                }
+
+                return fullName;
             }
                 
         }

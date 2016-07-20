@@ -69,7 +69,7 @@ namespace AppNotex.Pages
             SaveNote();
         }
 
-        private  void SaveNote()
+        private async  void SaveNote()
         {
             waitActivityIndicator.IsRunning = true;
 
@@ -82,11 +82,36 @@ namespace AppNotex.Pages
             var jsonRequest = JsonConvert.SerializeObject(body);
             var httpContent = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
-            var respkinse = string.Empty;
+            var response = string.Empty;
 
+            try
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri("http://www.zulu-software.com");
+                var url = $"/Notes/API/Groups/SaveNotes";
+                var result = await client.PostAsync(url, httpContent);
 
+                if (!result.IsSuccessStatusCode)
+                {
+                    waitActivityIndicator.IsRunning = false;
+                    await DisplayAlert("Error",result.StatusCode.ToString(), "Aceptar");
+                    return;
+
+                }
+
+                //response = await result.Content.ReadAsStringAsync();
+            }
+            catch (Exception ex)
+            {
+
+                waitActivityIndicator.IsRunning = false;
+                await DisplayAlert("Error", ex.Message, "Aceptar");
+                return;
+            }
 
             waitActivityIndicator.IsRunning = false;
+            await DisplayAlert("Confirmación", "Notas Ingresadas de forma Correcta","Aceptar");
+            await Navigation.PopAsync();
         }
 
         protected override void OnAppearing()
@@ -131,7 +156,11 @@ namespace AppNotex.Pages
             myStudentsResponse = JsonConvert.DeserializeObject<List<MyStudentResponse>>(response);
             myStudentsListView.ItemsSource = myStudentsResponse;
 
+
+
             waitActivityIndicator.IsRunning = false;
+
+            
         }
     }
 }

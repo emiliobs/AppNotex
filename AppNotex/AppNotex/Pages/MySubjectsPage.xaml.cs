@@ -70,17 +70,48 @@ namespace AppNotex.Pages
             }
 
             var myGroupsResponse = JsonConvert.DeserializeObject<MyGroupsResponse>(response);
-            CalculateNotes(myGroupsResponse.MySubjects);
+            await CalculateNotes(myGroupsResponse.MySubjects);
             mySubjectListView.ItemsSource = myGroupsResponse.MySubjects;
             waitActivityIndicator.IsRunning = false;
         }
 
-        private void CalculateNotes(List<Teacher> mySubjects)
+        private async Task CalculateNotes(List<Teacher> mySubjects)
         {
-            foreach (var item in collection)
+            foreach (var mySubject in mySubjects)
             {
-
+                mySubject.Note = await GetDefinitive(user.UserId, mySubject.GroupId);
             }
+        }
+
+        private async Task<float> GetDefinitive(int userId, int groupId)
+        {
+
+            var response = string.Empty;
+
+            try
+            {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri("http://www.zulu-software.com");
+                var url = $"/Notes/API/Groups/GetNote/{groupId}/{userId}";
+                var result = await client.GetAsync(url);
+
+                if (!result.IsSuccessStatusCode)
+                {
+                    return 0;
+                }
+
+                response = await result.Content.ReadAsStringAsync();
+            }
+            catch (Exception ex)
+            {
+                //waitActivityIndicator.IsRunning = false;
+                //await DisplayAlert("Error", ex.Message, "Aceptar");
+                return 0;
+                
+            }
+
+            var myNoteResponse = JsonConvert.DeserializeObject<MyNoteResponse>(response);
+            return myNoteResponse.Note;
         }
     }
 }
